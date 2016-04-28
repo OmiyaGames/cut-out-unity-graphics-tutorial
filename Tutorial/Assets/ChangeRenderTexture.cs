@@ -3,6 +3,14 @@ using UnityEngine.UI;
 
 public class ChangeRenderTexture : MonoBehaviour
 {
+    public enum TextureType
+    {
+        Mask,
+        InsideWorld
+    }
+
+    [SerializeField]
+    TextureType type = TextureType.Mask;
     [SerializeField]
     Camera renderCamera;
     [SerializeField]
@@ -13,11 +21,25 @@ public class ChangeRenderTexture : MonoBehaviour
     {
 	    if(renderCamera != null)
         {
-            renderCamera.targetTexture = RenderTextureGenerator.MaskTexture;
+            if(type == TextureType.Mask)
+            {
+                renderCamera.targetTexture = RenderTextureGenerator.MaskTexture;
+            }
+            else
+            {
+                renderCamera.targetTexture = RenderTextureGenerator.InsideWorldTexture;
+            }
         }
         if(targetImage != null)
         {
-            targetImage.texture = RenderTextureGenerator.MaskTexture;
+            if (type == TextureType.Mask)
+            {
+                targetImage.texture = RenderTextureGenerator.MaskTexture;
+            }
+            else
+            {
+                targetImage.texture = RenderTextureGenerator.InsideWorldTexture;
+            }
         }
-	}
+    }
 }

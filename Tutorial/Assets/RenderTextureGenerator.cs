@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public static class RenderTextureGenerator
 {
     static RenderTexture maskTexture = null;
+    static RenderTexture insideWorldTexture = null;
 
     public static RenderTexture MaskTexture
     {
@@ -12,8 +12,21 @@ public static class RenderTextureGenerator
             if(maskTexture == null)
             {
                 maskTexture = new RenderTexture(Screen.width, Screen.height, 16);
+                maskTexture.name = "Mask Texture";
             }
             return maskTexture;
+        }
+    }
+    public static RenderTexture InsideWorldTexture
+    {
+        get
+        {
+            if (insideWorldTexture == null)
+            {
+                insideWorldTexture = new RenderTexture(Screen.width, Screen.height, 16);
+                insideWorldTexture.name = "Inside-World Texture";
+            }
+            return insideWorldTexture;
         }
     }
 }
