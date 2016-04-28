@@ -1,1 +1,3 @@
 This is a project I created so I can teach how to create the graphics for Hidden in Plain Sight from scratch.
+
+In Unity, select "open project," and open the "Tutorial" folder.  This folder already imports from Standard Assets "Characters," "Cameras," and "Prototypes."  It also imports "Cinematic Image Effects pre-release" from the Asset Store (a Beta package by Unity) which you can find here:  www.assetstore.unity3d.com/en/#!/content/51515

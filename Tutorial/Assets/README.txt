@@ -1,1 +1,0 @@
-This is a project I created so I can teach how to create the graphics for Hidden in Plain Sight from scratch.
